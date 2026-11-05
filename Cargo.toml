@@ -1,0 +1,16 @@
+[package]
+name = "sandbox_engine"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "sandbox_engine"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.21", features = ["extension-module"] }
+chacha20poly1305 = "0.10"
+argon2 = "0.5"
+lz4_flex = "0.11"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
