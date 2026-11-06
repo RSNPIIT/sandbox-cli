@@ -2,15 +2,35 @@
 name = "sandbox_engine"
 version = "0.1.0"
 edition = "2021"
+rust-version = "1.85"
+description = "Rust vault engine for Sandbox CLI"
+license = "GPL-3.0-or-later"
 
 [lib]
 name = "sandbox_engine"
 crate-type = ["cdylib"]
 
 [dependencies]
-pyo3 = { version = "0.21", features = ["extension-module"] }
-chacha20poly1305 = "0.10"
+anyhow = "1.0"
 argon2 = "0.5"
+blake2 = "0.10"
+chacha20poly1305 = "0.10"
+crc32fast = "1.4"
+filetime = "0.2"
+fs2 = "0.4"
+getrandom = "0.3"
+hex = "0.4"
 lz4_flex = "0.11"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+walkdir = "2.5"
+zeroize = "1.8"
+
+[dependencies.pyo3]
+version = "0.30"
+features = ["extension-module", "abi3-py39"]
+
+[profile.release]
+codegen-units = 1
+lto = true
+strip = true
