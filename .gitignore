@@ -1,20 +1,21 @@
 # --- Rust/Cargo Artifacts ---
 /target/
 **/*.rs.bk
-Cargo.lock
+.toolchain/
 
 # --- Python Build/Runtime Artifacts ---
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
+*.pyd
 .pytest_cache/
+.coverage
+htmlcov/
 /build/
 /dist/
 /*.egg-info/
 .eggs/
-
-# --- Development Environments ---
 .venv/
 env/
 ENV/
@@ -22,7 +23,9 @@ ENV/
 # --- Application Test Vaults (Prevent pushing real data to GitHub) ---
 *.img
 *.vault
+*.sbx
 test_vault/
+*.lock
 
 # --- OS Specifics ---
 .DS_Store
